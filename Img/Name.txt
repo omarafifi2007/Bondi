@@ -1,0 +1,136 @@
+Skills_Omar = [
+
+Full Stack Developer,
+
+Artificial Intelligence,
+
+MachineLearning,
+
+Trader_Of_BitCoin_&_Forex,
+
+Languish_English_And_Arabic,
+
+Programming_Languish == Python,
+
+C,
+
+C++,
+
+HTML,
+
+CSS,
+
+BootStrap,
+
+JavaScript,
+
+ReactJS,
+
+MYSQL,
+
+PHP,
+
+Lisp,
+
+Java
+
+]
+
+Skills_Sara = [
+
+Web Front_end,
+
+Artificial Intelligence,
+
+MachineLearning,
+
+Trader_Of_BitCoin_Of_Forex,
+
+Languish_English,
+
+Programming_Languish == Python,
+C,
+
+C++,
+
+HTML,
+
+CSS,
+
+JavaScript,
+
+ReactJS,
+
+MYSQL,
+
+PHP,
+
+Lisp,
+
+Java
+
+]
+
+
+
+
+# include<iostream>
+# include<string>
+using namespace std;
+
+struct Employee
+{
+    int Eno;
+    string Name;
+    string Job;
+    float Salary;
+    float Bonus;
+};
+
+void Get_Date(Employee arr[], int Size);
+void Set_Bonus (Employee &e , float Percent);
+void print (Employee arr[], int Size);
+
+int main()
+{
+    Employee emps[4];
+    Get_Date(emps, 4);
+    Set_Bonus(emps[1],.10f);
+    print(emps , 4);
+    return 0;
+}
+
+void Get_Date(Employee arr[], int Size)
+{
+    for(int i = 0;i < Size; i++)
+    {
+        cout<<"Enter Date Employee: ";
+        cin>>arr[i].Eno>>arr[i].Name>>arr[i].Job;
+        if (arr[i].Job == "Manager")
+            arr[i].Salary = 5000;
+        else if (arr[i].Job == "Engineer")
+            arr[i].Salary = 3000;
+        else if (arr[i].Job == "Clerck")
+            arr[i].Salary = 2000;
+        else if(arr[i].Job == "Other Wise")
+            arr[i].Salary = 1000;
+    }
+}
+
+void Set_Bonus (Employee &e , float Percent)
+{
+    e.Bonus = e.Salary * Percent;
+}
+
+void print (Employee arr[], int Size)
+{
+    for (int i = 0; i < Size;i++)
+    {
+        cout<<"Employee Number = "<<arr[i].Eno<<"\n";
+        cout<<"Employee Name = "<<arr[i].Name<<"\n";
+        cout<<"Employee Job = "<<arr[i].Job<<"\n";
+        cout<<"Employee Salary = "<<arr[i].Salary<<"\n";
+        cout<<"Employee Bonus = "<<arr[i].Bonus<<"\n";
+        cout<<"***************************************"<<"\n";
+    }
+}
